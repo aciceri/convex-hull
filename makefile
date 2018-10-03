@@ -1,4 +1,4 @@
-PARAMS = -Wall
+PARAMS = -Wall -lm
 
 main: main.c algorithm.o
 	gcc $(PARAMS) main.c algorithm.o -o main

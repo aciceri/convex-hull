@@ -7,7 +7,15 @@ int main(int argc, char** argv) {
         return -1;
     }
 
-    tPointsCloud pc = readPointsFromFile(argv[1]);  
+    /*tPoint *a = (tPoint *) malloc(sizeof(tPoint));
+    tPoint *b = (tPoint *) malloc(sizeof(tPoint));
+    a->x = 0;
+    a->y = 1;
+    b->x = 1;
+    b->y = 1;
+    printf("%d\n", comp((void *)a, (void *)b));*/
+
+    tPointsCloud pc = readPointsFromFile(argv[1]);
     tPointsCloud hull = computeConvexHull(pc);
 
     writeHullOnFile(hull, argv[2]);

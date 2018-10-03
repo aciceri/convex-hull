@@ -9,7 +9,7 @@ typedef struct {
 
 typedef struct {
     unsigned int n;
-    tPoint* point; 
+    tPoint* point;
 } tPointsCloud;
 
 typedef struct tPointsList{
@@ -18,9 +18,12 @@ typedef struct tPointsList{
 } tPointsList;
 
 
+//int comp(const void *p, const void *q);
+
+
 tPointsCloud readPointsFromFile(const char* filename);
 tPoint computeCentroid(tPointsCloud pc);
 tPointsList* sortPoints(tPointsCloud pc, tPoint centroid);
-double isConvexAngle(tPoint a, tPoint b, tPoint c);
+int isConvexAngle(tPoint a, tPoint b, tPoint c);
 tPointsCloud computeConvexHull(tPointsCloud pc);
-void writeHullOnFile(tPointsCloud hull, const char* filename); 
+void writeHullOnFile(tPointsCloud hull, const char* filename);
